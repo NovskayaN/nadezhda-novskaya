@@ -235,6 +235,7 @@ footer .gold { color: var(--gold); }
   .hero-cta { justify-content: center; }
   .hero-photo-inner { width: 280px; height: 350px; }
   .hero-photo { order: -1; }
+  .hero-text > div:last-child { justify-content: center; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .stat-item:nth-child(2) { border-right: none; }
@@ -256,6 +257,39 @@ footer .gold { color: var(--gold); }
   .about-highlights { grid-template-columns: 1fr; }
   .cred-grid { grid-template-columns: 1fr !important; }
   .cred-grid .cred-card { grid-column: 1/-1 !important; }
+  .about .stats { grid-template-columns: repeat(2, 1fr) !important; }
+  #credentials > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+  #credentials > div:last-child img { height: 150px !important; }
+  .current-content > div:first-of-type { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  section { padding: 3rem 1rem; }
+  nav { padding: 0.8rem 1rem; }
+  nav.scrolled { padding: 0.6rem 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-desc { font-size: 0.85rem; }
+  .hero-photo-inner { width: 220px; height: 280px; }
+  .section-title { font-size: 1.4rem; }
+  .section-desc { font-size: 0.85rem; margin-bottom: 2rem; }
+  .cred-card { padding: 1.5rem; }
+  .cred-card h3 { font-size: 1rem; }
+  .cred-card p { font-size: 0.82rem; }
+  .about .stats { gap: 0; }
+  .stat-num { font-size: 1.5rem; }
+  .stat-label { font-size: 0.65rem; }
+  #credentials > div:last-child { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
+  #credentials > div:last-child img { height: 120px !important; }
+  .process-steps { grid-template-columns: 1fr; gap: 1rem; }
+  .speak-grid { grid-template-columns: 1fr; }
+  .speak-card { padding: 1.5rem; }
+  .speak-card video { height: 200px !important; }
+  .current-content > div:first-of-type { gap: 1rem; }
+  .current-content > div:first-of-type > div { padding: 1rem !important; }
+  .contact-card { padding: 2rem 1.5rem; }
+  .contact-photo { width: 100px; height: 100px; }
+  footer { padding: 1.5rem 1rem; }
+  .hero-text > div:last-child { flex-direction: column; align-items: center; text-align: center; }
 }
 </style>
 </head>
