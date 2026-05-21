@@ -6,6 +6,7 @@
 <title>Новская Надежда | Международный проектный продюсер в здравоохранении</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="Новская.png">
 <style>
 :root {
   --gold: #b8944e;
@@ -100,7 +101,9 @@ nav.scrolled {
   width: 380px; height: 480px; border-radius: 20px; overflow: hidden;
   position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.4);
 }
-.hero-photo-inner img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-inner img { width: 100%; height: 100%; object-fit: cover; animation: imgFadeIn 0.6s ease; }
+img { animation: imgFadeIn 0.5s ease; }
+@keyframes imgFadeIn { from { opacity: 0; } to { opacity: 1; } }
 .hero-photo-inner::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 50%, rgba(26,20,16,0.4));
@@ -353,7 +356,7 @@ footer .gold { color: var(--gold); }
   <div class="about-grid">
     <div class="about-text reveal">
       <p>Я — международный проектный продюсер в здравоохранении. Работаю на стыке медицины и международного бизнеса — создаю образовательные программы и организую выезды за рубеж для главных врачей и министров здравоохранения. Рынок — госсектор России.</p>
-      <p>Работаю в партнёрстве с <strong>Российско-Китайской Палатой</strong> и аппаратами Губернаторов регионов РФ. Взаимодействую преимущественно с государственным сектором (GR) и частично с B2B.</p>
+      <p>Работаю в партнёрстве с <strong>Российско-Китайской Палатой</strong> и аппаратами Губернаторов регионов РФ. Взаимодействую с государственным сектором (GR) и B2B.</p>
       <div class="about-highlights">
         <div class="highlight-item"><span class="highlight-icon">✦</span> Бизнес-выезды для главврачей и министров здравоохранения</div>
         <div class="highlight-item"><span class="highlight-icon">✦</span> Образовательные программы с экспертным составом</div>
@@ -476,21 +479,21 @@ footer .gold { color: var(--gold); }
       <h4>Международный Муниципальный Форум БРИКС</h4>
       <div class="loc">Санкт-Петербург, октябрь 2025</div>
       <p>Выступление с докладом «Организация международных бизнес-конференций в здравоохранении» на круглом столе «Международный туризм: спрос и предложение». Организатор: Российско-Китайская Палата.</p>
-      <video src="brics_speech.mp4" controls preload="metadata" style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:#000"></video>
+      <video src="brics_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
     <div class="speak-card reveal">
       <span class="icon">&#x1F3DB;</span>
       <h4>Государственная Дума РФ</h4>
       <div class="loc">Москва, Россия</div>
       <p>Представление инициатив и результатов образовательных программ с применением ИИ в сфере здравоохранения.</p>
-      <video src="duma_speech.mp4" controls preload="metadata" style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:#000"></video>
+      <video src="duma_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
     <div class="speak-card reveal">
       <span class="icon">&#x1F4F0;</span>
       <h4>Международный саммит в Индии — Global Startup Summit 2025</h4>
       <div class="loc">Индия</div>
       <p>Выступление с проектом по ЭКО на международном саммите. Представление российской практики репродуктивной медицины.</p>
-      <video src="india_speech.mp4" controls preload="metadata" style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:#000"></video>
+      <video src="india_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
   </div>
 </section>
