@@ -641,26 +641,26 @@ const lang = {
   }
 };
 
+const orig = {};
+document.querySelectorAll('[data-i18n]').forEach(el => { orig[el.dataset.i18n] = el.innerHTML; });
+
 function setLang(l) {
-  const t = lang[l];
-  if (!t) return;
   document.getElementById('htmlTag').setAttribute('lang', l === 'en' ? 'en' : 'ru');
   document.getElementById('langToggle').textContent = l === 'en' ? 'RU' : 'EN';
   document.getElementById('langToggle').dataset.lang = l;
   document.title = l === 'en' ? 'Novskaya Nadezhda | International Healthcare Project Producer' : 'Новская Надежда | Международный проектный продюсер в здравоохранении';
+  const t = lang[l];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (t[key] !== undefined) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t[key]; }
-      else { el.innerHTML = t[key]; }
-    }
+    if (l === 'ru') { el.innerHTML = orig[key] || el.innerHTML; }
+    else if (t && t[key] !== undefined) { el.innerHTML = t[key]; }
   });
   localStorage.setItem('lang', l);
 }
 
 const savedLang = localStorage.getItem('lang') || 'ru';
 document.getElementById('langToggle').addEventListener('click', () => {
-  const cur = document.getElementById('langToggle').dataset.lang;
+  const cur = document.getElementById('langToggle').dataset.lang || savedLang;
   setLang(cur === 'ru' ? 'en' : 'ru');
 });
 setLang(savedLang);
