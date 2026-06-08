@@ -309,7 +309,7 @@ footer .gold { color: var(--gold); }
 <nav id="navbar">
   <a href="#" class="nav-logo">Nadezhda Novskaya</a>
   <button class="lang-toggle" id="langToggle" data-lang="ru">EN</button>
-  <button class="hamburger" id="hamburger" aria-label="Меню">
+  <button class="hamburger" id="hamburger" aria-label="Меню" data-i18n-aria="hamburger_label">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
@@ -335,7 +335,7 @@ footer .gold { color: var(--gold); }
         <a href="#credentials" class="btn btn-outline" data-i18n="hero_cta2">Мой опыт</a>
       </div>
       <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://t.me/msHope_Nadezhda&bgcolor=1a1410&color=d4b06a" alt="Telegram QR" style="width:90px;height:90px;border-radius:8px;border:1px solid rgba(184,148,78,0.2);flex-shrink:0">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://t.me/msHope_Nadezhda&bgcolor=1a1410&color=d4b06a" alt="Telegram QR" data-i18n-alt="qr_alt" style="width:90px;height:90px;border-radius:8px;border:1px solid rgba(184,148,78,0.2);flex-shrink:0">
         <div>
           <div style="font-size:0.75rem;color:var(--gold);letter-spacing:1px">Telegram</div>
           <div style="font-size:0.85rem;color:rgba(255,255,255,0.4)">@msHope_Nadezhda</div>
@@ -345,7 +345,7 @@ footer .gold { color: var(--gold); }
     <div class="hero-photo">
       <div class="hero-photo-border"></div>
       <div class="hero-photo-inner">
-        <img src="Новская.png" alt="Новская Надежда">
+        <img src="Новская.png" alt="Новская Надежда" data-i18n-alt="hero_photo_alt">
       </div>
     </div>
   </div>
@@ -429,10 +429,10 @@ footer .gold { color: var(--gold); }
     </div>
   </div>
   <div class="reveal" style="max-width:1000px;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem">
-    <img src="brics_slide9_7.jpeg" alt="Фото с мероприятия" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
-    <img src="brics_slide9_2.jpeg" alt="Фото с мероприятия" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
-    <img src="brics_slide9_0.jpeg" alt="Фото с мероприятия" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
-    <img src="brics_slide9_8.jpg" alt="Фото с мероприятия" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+    <img src="brics_slide9_7.jpeg" alt="Фото с мероприятия" data-i18n-alt="photo_alt" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+    <img src="brics_slide9_2.jpeg" alt="Фото с мероприятия" data-i18n-alt="photo_alt" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+    <img src="brics_slide9_0.jpeg" alt="Фото с мероприятия" data-i18n-alt="photo_alt" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+    <img src="brics_slide9_8.jpg" alt="Фото с мероприятия" data-i18n-alt="photo_alt" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
   </div>
 </section>
 
@@ -548,7 +548,7 @@ footer .gold { color: var(--gold); }
   <p class="section-desc reveal" data-i18n="contact_desc">Готова к сотрудничеству — международные проекты, образовательные программы, а также партнёрства по блогу о здоровьесбережении</p>
   <div class="contact-wrapper">
     <div class="contact-card reveal">
-      <img src="Новская.png" alt="Новская Надежда" class="contact-photo">
+      <img src="Новская.png" alt="Новская Надежда" data-i18n-alt="hero_photo_alt" class="contact-photo">
       <div class="contact-name" data-i18n="contact_name">Новская Надежда Витальевна</div>
       <div class="contact-role" data-i18n="contact_role">Международный проектный продюсер, директор по развитию в сфере здравоохранения АЛРИИ, индивидуальный предприниматель</div>
       <div class="contact-details">
@@ -637,12 +637,20 @@ const lang = {
     contact_role: 'International Healthcare Project Producer, Healthcare Development Director at ALRII, Sole Proprietor',
     contact_hint: 'Work with government sector (GR) and B2B',
     footer_name: 'Novskaya Nadezhda Vitalievna',
-    footer_role: 'International Healthcare Project Producer. Sole Proprietor. Healthcare Development Director at ALRII'
+    footer_role: 'International Healthcare Project Producer. Sole Proprietor. Healthcare Development Director at ALRII',
+    hamburger_label: 'Menu',
+    qr_alt: 'Telegram QR',
+    hero_photo_alt: 'Novskaya Nadezhda',
+    photo_alt: 'Event photo'
   }
 };
 
 const orig = {};
 document.querySelectorAll('[data-i18n]').forEach(el => { orig[el.dataset.i18n] = el.innerHTML; });
+const origAlt = {};
+document.querySelectorAll('[data-i18n-alt]').forEach(el => { origAlt[el.dataset.i18nAlt] = el.alt; });
+const origAria = {};
+document.querySelectorAll('[data-i18n-aria]').forEach(el => { origAria[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
 
 function setLang(l) {
   document.getElementById('htmlTag').setAttribute('lang', l === 'en' ? 'en' : 'ru');
@@ -654,6 +662,16 @@ function setLang(l) {
     const key = el.dataset.i18n;
     if (l === 'ru') { el.innerHTML = orig[key] || el.innerHTML; }
     else if (t && t[key] !== undefined) { el.innerHTML = t[key]; }
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.dataset.i18nAlt;
+    if (l === 'ru') { el.alt = origAlt[key] || el.alt; }
+    else if (t && t[key] !== undefined) { el.alt = t[key]; }
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.dataset.i18nAria;
+    if (l === 'ru') { el.setAttribute('aria-label', origAria[key] || el.getAttribute('aria-label')); }
+    else if (t && t[key] !== undefined) { el.setAttribute('aria-label', t[key]); }
   });
   localStorage.setItem('lang', l);
 }
