@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" id="htmlTag">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,6 +59,12 @@ nav.scrolled {
 .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
+.lang-toggle {
+  background: none; border: 1px solid rgba(184,148,78,0.3); color: var(--gold);
+  font: inherit; font-size: 0.7rem; letter-spacing: 2px; cursor: pointer;
+  padding: 0.3rem 0.7rem; transition: all 0.3s; text-transform: uppercase;
+}
+.lang-toggle:hover { background: rgba(184,148,78,0.1); border-color: var(--gold); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
 .hamburger span { width: 24px; height: 1.5px; background: var(--gold); transition: all 0.3s; }
 
@@ -302,16 +308,17 @@ footer .gold { color: var(--gold); }
 
 <nav id="navbar">
   <a href="#" class="nav-logo">Nadezhda Novskaya</a>
+  <button class="lang-toggle" id="langToggle" data-lang="ru">EN</button>
   <button class="hamburger" id="hamburger" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#about">Обо мне</a></li>
-    <li><a href="#credentials">Опыт</a></li>
-    <li><a href="#process">Как я работаю</a></li>
-    <li><a href="#speaking">Выступления</a></li>
-    <li><a href="#blog">Блог</a></li>
-    <li><a href="#contact">Контакты</a></li>
+    <li><a href="#about" data-i18n="nav_about">Обо мне</a></li>
+    <li><a href="#credentials" data-i18n="nav_exp">Опыт</a></li>
+    <li><a href="#process" data-i18n="nav_process">Как я работаю</a></li>
+    <li><a href="#speaking" data-i18n="nav_speaking">Выступления</a></li>
+    <li><a href="#blog" data-i18n="nav_blog">Блог</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Контакты</a></li>
   </ul>
 </nav>
 
@@ -319,13 +326,13 @@ footer .gold { color: var(--gold); }
   <div class="hero-bg"></div>
   <div class="hero-grid">
     <div class="hero-text">
-      <div class="hero-badge">Индивидуальный предприниматель</div>
-      <h1>Новская<br><span>Надежда</span></h1>
-      <p class="hero-sub">Международный проектный продюсер в здравоохранении</p>
-      <p class="hero-desc">Работаю на стыке медицины и международного бизнеса — создаю образовательные программы и организую выезды за рубеж для главных врачей и министров здравоохранения. Рынок — госсектор России.</p>
+      <div class="hero-badge" data-i18n="hero_badge">Индивидуальный предприниматель</div>
+      <h1><span data-i18n="hero_name">Новская</span><br><span data-i18n="hero_surname">Надежда</span></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Международный проектный продюсер в здравоохранении</p>
+      <p class="hero-desc" data-i18n="hero_desc">Работаю на стыке медицины и международного бизнеса — создаю образовательные программы и организую выезды за рубеж для главных врачей и министров здравоохранения. Рынок — госсектор России.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Связаться</a>
-        <a href="#credentials" class="btn btn-outline">Мой опыт</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="hero_cta1">Связаться</a>
+        <a href="#credentials" class="btn btn-outline" data-i18n="hero_cta2">Мой опыт</a>
       </div>
       <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://t.me/msHope_Nadezhda&bgcolor=1a1410&color=d4b06a" alt="Telegram QR" style="width:90px;height:90px;border-radius:8px;border:1px solid rgba(184,148,78,0.2);flex-shrink:0">
@@ -343,47 +350,47 @@ footer .gold { color: var(--gold); }
     </div>
   </div>
   <div class="hero-scroll">
-    <span>Листайте</span>
+    <span data-i18n="hero_scroll">Листайте</span>
     <div class="scroll-line"></div>
   </div>
 </section>
 
 <section class="about" id="about">
-  <div class="section-label reveal">Обо мне</div>
-  <h2 class="section-title reveal">На стыке медицины и международного бизнеса</h2>
+  <div class="section-label reveal" data-i18n="about_label">Обо мне</div>
+  <h2 class="section-title reveal" data-i18n="about_title">На стыке медицины и международного бизнеса</h2>
   <div class="section-divider reveal"></div>
-  <p class="section-desc reveal">За 10 лет организовала 85 мероприятий с участием более 20 000 человек</p>
+  <p class="section-desc reveal" data-i18n="about_desc">За 10 лет организовала 85 мероприятий с участием более 20 000 человек</p>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>Я — международный проектный продюсер в здравоохранении. Работаю на стыке медицины и международного бизнеса — создаю образовательные программы и организую выезды за рубеж для главных врачей и министров здравоохранения. Рынок — госсектор России.</p>
-      <p>Работаю в партнёрстве с <strong>Российско-Китайской Палатой</strong> и аппаратами Губернаторов регионов РФ. Взаимодействую с государственным сектором (GR) и B2B.</p>
+      <p data-i18n="about_p1">Я — международный проектный продюсер в здравоохранении. Работаю на стыке медицины и международного бизнеса — создаю образовательные программы и организую выезды за рубеж для главных врачей и министров здравоохранения. Рынок — госсектор России.</p>
+      <p><span data-i18n="about_p2_part1">Работаю в партнёрстве с</span> <strong data-i18n="about_p2_strong">Российско-Китайской Палатой</strong> <span data-i18n="about_p2_part2">и аппаратами Губернаторов регионов РФ. Взаимодействую с государственным сектором (GR) и B2B.</span></p>
       <div class="about-highlights">
-        <div class="highlight-item"><span class="highlight-icon">✦</span> Бизнес-выезды для главврачей и министров здравоохранения</div>
-        <div class="highlight-item"><span class="highlight-icon">✦</span> Образовательные программы с экспертным составом</div>
-        <div class="highlight-item"><span class="highlight-icon">✦</span> Партнёрство с госструктурами и международными палатами</div>
-        <div class="highlight-item"><span class="highlight-icon">✦</span> Полный цикл: от идеи до реализации</div>
+        <div class="highlight-item"><span class="highlight-icon">✦</span> <span data-i18n="about_h1">Бизнес-выезды для главврачей и министров здравоохранения</span></div>
+        <div class="highlight-item"><span class="highlight-icon">✦</span> <span data-i18n="about_h2">Образовательные программы с экспертным составом</span></div>
+        <div class="highlight-item"><span class="highlight-icon">✦</span> <span data-i18n="about_h3">Партнёрство с госструктурами и международными палатами</span></div>
+        <div class="highlight-item"><span class="highlight-icon">✦</span> <span data-i18n="about_h4">Полный цикл: от идеи до реализации</span></div>
       </div>
     </div>
     <div class="reveal">
       <div class="stats" style="grid-template-columns:repeat(4,1fr);">
-        <div class="stat-item"><div class="stat-num">69</div><div class="stat-label">Российских мероприятий</div></div>
-        <div class="stat-item"><div class="stat-num">16</div><div class="stat-label">Международных</div></div>
-        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Онлайн-проектов</div></div>
-        <div class="stat-item" style="border-right:none"><div class="stat-num">20 000+</div><div class="stat-label">Участников</div></div>
+        <div class="stat-item"><div class="stat-num">69</div><div class="stat-label" data-i18n="stat1">Российских мероприятий</div></div>
+        <div class="stat-item"><div class="stat-num">16</div><div class="stat-label" data-i18n="stat2">Международных</div></div>
+        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stat3">Онлайн-проектов</div></div>
+        <div class="stat-item" style="border-right:none"><div class="stat-num">20 000+</div><div class="stat-label" data-i18n="stat4">Участников</div></div>
       </div>
       <div style="margin-top:1.5rem;text-align:center">
-        <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem">География проектов</p>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem" data-i18n="geo_label">География проектов</p>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem">
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Китай</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Израиль</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Грузия</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Чехия</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Казахстан</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Латвия</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Испания</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Кипр</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Турция</span>
-          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)">Египет</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo1">Китай</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo2">Израиль</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo3">Грузия</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo4">Чехия</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo5">Казахстан</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo6">Латвия</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo7">Испания</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo8">Кипр</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo9">Турция</span>
+          <span style="padding:0.3rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6)" data-i18n="geo10">Египет</span>
         </div>
       </div>
     </div>
@@ -391,34 +398,34 @@ footer .gold { color: var(--gold); }
 </section>
 
 <section class="credentials" id="credentials">
-  <div class="section-label reveal">Компетенции</div>
-  <h2 class="section-title reveal">Мой опыт и достижения</h2>
+  <div class="section-label reveal" data-i18n="cred_label">Компетенции</div>
+  <h2 class="section-title reveal" data-i18n="cred_title">Мой опыт и достижения</h2>
   <div class="section-divider reveal"></div>
-  <p class="section-desc reveal">Более 10 лет реализую проекты в сфере здравоохранения на международном уровне</p>
+  <p class="section-desc reveal" data-i18n="cred_desc">Более 10 лет реализую проекты в сфере здравоохранения на международном уровне</p>
   <div class="cred-grid" style="grid-template-columns:repeat(3,1fr);max-width:1000px">
     <div class="cred-card reveal">
       <span class="cred-icon">&#x1F30D;</span>
-      <h3>Международные бизнес-выезды</h3>
-      <p>Организую профессиональные стажировки и бизнес-миссии для руководителей здравоохранения в страны Азии и по всему миру. Полный цикл: концепция, партнёрство, программа, логистика, сопровождение.</p>
-      <span class="tag">Корея · Китай · Азия</span>
+      <h3 data-i18n="cred1_title">Международные бизнес-выезды</h3>
+      <p data-i18n="cred1_text">Организую профессиональные стажировки и бизнес-миссии для руководителей здравоохранения в страны Азии и по всему миру. Полный цикл: концепция, партнёрство, программа, логистика, сопровождение.</p>
+      <span class="tag" data-i18n="cred1_tag">Корея · Китай · Азия</span>
     </div>
     <div class="cred-card reveal">
       <span class="cred-icon">&#x1F393;</span>
-      <h3>Образовательные программы</h3>
-      <p>Создаю с нуля образовательные программы с привлечением экспертного состава. Разрабатываю содержание, привлекаю лекторов, организую учебный процесс для госслужащих и медицинских работников.</p>
-      <span class="tag">Экспертный состав</span>
+      <h3 data-i18n="cred2_title">Образовательные программы</h3>
+      <p data-i18n="cred2_text">Создаю с нуля образовательные программы с привлечением экспертного состава. Разрабатываю содержание, привлекаю лекторов, организую учебный процесс для госслужащих и медицинских работников.</p>
+      <span class="tag" data-i18n="cred2_tag">Экспертный состав</span>
     </div>
     <div class="cred-card reveal">
       <span class="cred-icon">&#x1F3A4;</span>
-      <h3>Выступления на форумах</h3>
-      <p>Выступала на Международном Муниципальном Форуме БРИКС (Санкт-Петербург, 2025) с докладом об организации бизнес-конференций в здравоохранении. Также выступала в Государственной Думе РФ и на международном саммите в Индии с проектом по ЭКО.</p>
-      <span class="tag">БРИКС · Госдума · Индия</span>
+      <h3 data-i18n="cred3_title">Выступления на форумах</h3>
+      <p data-i18n="cred3_text">Выступала на Международном Муниципальном Форуме БРИКС (Санкт-Петербург, 2025) с докладом об организации бизнес-конференций в здравоохранении. Также выступала в Государственной Думе РФ и на международном саммите в Индии с проектом по ЭКО.</p>
+      <span class="tag" data-i18n="cred3_tag">БРИКС · Госдума · Индия</span>
     </div>
     <div class="cred-card reveal" style="grid-column:2/3">
       <span class="cred-icon">&#x1F91D;</span>
-      <h3>Партнёрство с госструктурами</h3>
-      <p>Работаю в партнёрстве с Российско-Китайской Палатой и аппаратами Губернаторов регионов РФ. Выстраиваю эффективное взаимодействие между российскими и зарубежными государственными структурами.</p>
-      <span class="tag">GR · Госсектор</span>
+      <h3 data-i18n="cred4_title">Партнёрство с госструктурами</h3>
+      <p data-i18n="cred4_text">Работаю в партнёрстве с Российско-Китайской Палатой и аппаратами Губернаторов регионов РФ. Выстраиваю эффективное взаимодействие между российскими и зарубежными государственными структурами.</p>
+      <span class="tag" data-i18n="cred4_tag">GR · Госсектор</span>
     </div>
   </div>
   <div class="reveal" style="max-width:1000px;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem">
@@ -430,159 +437,248 @@ footer .gold { color: var(--gold); }
 </section>
 
 <section class="process" id="process">
-  <div class="section-label reveal">Как я работаю</div>
-  <h2 class="section-title reveal">Мой подход к реализации проектов</h2>
+  <div class="section-label reveal" data-i18n="proc_label">Как я работаю</div>
+  <h2 class="section-title reveal" data-i18n="proc_title">Мой подход к реализации проектов</h2>
   <div class="section-divider reveal"></div>
-  <p class="section-desc reveal">Каждый проект проходит чёткий цикл от идеи до успешной реализации</p>
+  <p class="section-desc reveal" data-i18n="proc_desc">Каждый проект проходит чёткий цикл от идеи до успешной реализации</p>
   <div class="process-steps">
     <div class="step-card reveal">
       <div class="step-num">1</div>
-      <h4>Идея проекта</h4>
-      <p>Придумываю концепцию и определяю сферу, которая будет востребована и полезна</p>
+      <h4 data-i18n="step1_title">Идея проекта</h4>
+      <p data-i18n="step1_text">Придумываю концепцию и определяю сферу, которая будет востребована и полезна</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">2</div>
-      <h4>Партнёр за рубежом</h4>
-      <p>Нахожу надёжного партнёра в целевой стране — клинику, университет или ассоциацию</p>
+      <h4 data-i18n="step2_title">Партнёр за рубежом</h4>
+      <p data-i18n="step2_text">Нахожу надёжного партнёра в целевой стране — клинику, университет или ассоциацию</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">3</div>
-      <h4>Партнёр в России</h4>
-      <p>Привлекаю российского партнёра — министерство, палату или профильную организацию</p>
+      <h4 data-i18n="step3_title">Партнёр в России</h4>
+      <p data-i18n="step3_text">Привлекаю российского партнёра — министерство, палату или профильную организацию</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">4</div>
-      <h4>Создание продукта</h4>
-      <p>Разрабатываю ТЗ, собираю КП, формирую программу мероприятия, просчитываю экономику</p>
+      <h4 data-i18n="step4_title">Создание продукта</h4>
+      <p data-i18n="step4_text">Разрабатываю ТЗ, собираю КП, формирую программу мероприятия, просчитываю экономику</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">5</div>
-      <h4>Продажа госсектору</h4>
-      <p>Предлагаю готовый продукт на рынок РФ, работаю с аппаратами губернаторов и Минздравами</p>
+      <h4 data-i18n="step5_title">Продажа госсектору</h4>
+      <p data-i18n="step5_text">Предлагаю готовый продукт на рынок РФ, работаю с аппаратами губернаторов и Минздравами</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">6</div>
-      <h4>Реализация</h4>
-      <p>Провожу мероприятие, сопровождаю участников, подвожу итоги и закрываю проект</p>
+      <h4 data-i18n="step6_title">Реализация</h4>
+      <p data-i18n="step6_text">Провожу мероприятие, сопровождаю участников, подвожу итоги и закрываю проект</p>
     </div>
   </div>
 </section>
 
 <section class="speaking" id="speaking">
-  <div class="section-label reveal" style="color: var(--gold);">Выступления</div>
-  <h2 class="section-title reveal">Где я выступала</h2>
+  <div class="section-label reveal" style="color: var(--gold);" data-i18n="speak_label">Выступления</div>
+  <h2 class="section-title reveal" data-i18n="speak_title">Где я выступала</h2>
   <div class="section-divider reveal"></div>
-  <p class="section-desc reveal">Представляла проекты в сфере репродуктивного здоровья и международного сотрудничества на площадках высокого уровня</p>
+  <p class="section-desc reveal" data-i18n="speak_desc">Представляла проекты в сфере репродуктивного здоровья и международного сотрудничества на площадках высокого уровня</p>
   <div class="speak-grid">
     <div class="speak-card reveal">
       <span class="icon">&#x1F30F;</span>
-      <h4>Международный Муниципальный Форум БРИКС</h4>
-      <div class="loc">Санкт-Петербург, октябрь 2025</div>
-      <p>Выступление с докладом «Организация международных бизнес-конференций в здравоохранении» на круглом столе «Международный туризм: спрос и предложение». Организатор: Российско-Китайская Палата.</p>
+      <h4 data-i18n="speak1_title">Международный Муниципальный Форум БРИКС</h4>
+      <div class="loc" data-i18n="speak1_loc">Санкт-Петербург, октябрь 2025</div>
+      <p data-i18n="speak1_text">Выступление с докладом «Организация международных бизнес-конференций в здравоохранении» на круглом столе «Международный туризм: спрос и предложение». Организатор: Российско-Китайская Палата.</p>
       <video src="brics_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
     <div class="speak-card reveal">
       <span class="icon">&#x1F3DB;</span>
-      <h4>Государственная Дума РФ</h4>
-      <div class="loc">Москва, Россия</div>
-      <p>Представление инициатив и результатов образовательных программ с применением ИИ в сфере здравоохранения.</p>
+      <h4 data-i18n="speak2_title">Государственная Дума РФ</h4>
+      <div class="loc" data-i18n="speak2_loc">Москва, Россия</div>
+      <p data-i18n="speak2_text">Представление инициатив и результатов образовательных программ с применением ИИ в сфере здравоохранения.</p>
       <video src="duma_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
     <div class="speak-card reveal">
       <span class="icon">&#x1F4F0;</span>
-      <h4>Международный саммит в Индии — Global Startup Summit 2025</h4>
-      <div class="loc">Индия</div>
-      <p>Выступление с проектом по ЭКО на международном саммите. Представление российской практики репродуктивной медицины.</p>
+      <h4 data-i18n="speak3_title">Международный саммит в Индии — Global Startup Summit 2025</h4>
+      <div class="loc" data-i18n="speak3_loc">Индия</div>
+      <p data-i18n="speak3_text">Выступление с проектом по ЭКО на международном саммите. Представление российской практики репродуктивной медицины.</p>
       <video src="india_speech.mp4" controls style="width:100%;border-radius:8px;margin-top:1rem;height:240px;object-fit:cover;background:var(--dark)"></video>
     </div>
   </div>
 </section>
 
 <section class="current" id="blog">
-  <div class="section-label reveal">Сейчас в фокусе</div>
-  <h2 class="section-title reveal">Запускаю блог про здоровьесбережение</h2>
+  <div class="section-label reveal" data-i18n="blog_label">Сейчас в фокусе</div>
+  <h2 class="section-title reveal" data-i18n="blog_title">Запускаю блог про здоровьесбережение</h2>
   <div class="section-divider reveal"></div>
   <div class="current-content reveal">
-    <div class="current-tag">Здоровьесбережение</div>
-    <p><strong>Здоровьесбережение — это не лечение болезней. Это их предотвращение.</strong> Лечение начинается, когда что-то уже сломалось. Здоровьесбережение — это система действий, которая не даёт сломаться.</p>
+    <div class="current-tag" data-i18n="blog_tag">Здоровьесбережение</div>
+    <p><strong data-i18n="blog_lead">Здоровьесбережение — это не лечение болезней. Это их предотвращение.</strong> <span data-i18n="blog_lead2">Лечение начинается, когда что-то уже сломалось. Здоровьесбережение — это система действий, которая не даёт сломаться.</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:left;max-width:650px;margin:2rem auto">
       <div style="background:rgba(184,148,78,0.08);padding:1.5rem;border-radius:12px;border:1px solid var(--border)">
         <div style="font-size:1.5rem;margin-bottom:0.5rem">&#x1F52C;</div>
-        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem">Регулярная диагностика</h4>
-        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6">Знать свои показатели до того, как появятся симптомы</p>
+        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem" data-i18n="blog_p1_title">Регулярная диагностика</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6" data-i18n="blog_p1_text">Знать свои показатели до того, как появятся симптомы</p>
       </div>
       <div style="background:rgba(184,148,78,0.08);padding:1.5rem;border-radius:12px;border:1px solid var(--border)">
         <div style="font-size:1.5rem;margin-bottom:0.5rem">&#x1F33F;</div>
-        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem">Образ жизни как инструмент</h4>
-        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6">Питание, сон, движение — не советы, а управляемые параметры</p>
+        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem" data-i18n="blog_p2_title">Образ жизни как инструмент</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6" data-i18n="blog_p2_text">Питание, сон, движение — не советы, а управляемые параметры</p>
       </div>
       <div style="background:rgba(184,148,78,0.08);padding:1.5rem;border-radius:12px;border:1px solid var(--border)">
         <div style="font-size:1.5rem;margin-bottom:0.5rem">&#x1F9E0;</div>
-        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem">Здоровая голова</h4>
-        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6">Стресс, выгорание и ментальное состояние — часть системы, не отдельная тема</p>
+        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem" data-i18n="blog_p3_title">Здоровая голова</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6" data-i18n="blog_p3_text">Стресс, выгорание и ментальное состояние — часть системы, не отдельная тема</p>
       </div>
       <div style="background:rgba(184,148,78,0.08);padding:1.5rem;border-radius:12px;border:1px solid var(--border)">
         <div style="font-size:1.5rem;margin-bottom:0.5rem">&#x1F4DA;</div>
-        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem">Медицинская грамотность</h4>
-        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6">Понимать анализы, читать рекомендации, не паниковать от диагнозов</p>
+        <h4 style="font-size:0.95rem;color:var(--dark);margin-bottom:0.3rem" data-i18n="blog_p4_title">Медицинская грамотность</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);line-height:1.6" data-i18n="blog_p4_text">Понимать анализы, читать рекомендации, не паниковать от диагнозов</p>
       </div>
     </div>
     <div style="margin-top:2rem;padding:2rem;background:rgba(184,148,78,0.06);border-radius:16px;border:1px solid var(--border);max-width:600px;margin-left:auto;margin-right:auto">
-      <p style="font-size:0.95rem;margin-bottom:0.8rem">Мне интересны люди, у которых уже есть аудитория в этой теме — врачи, нутрициологи, эксперты по ЗОЖ. Если вы такой человек или знаете таких — давайте обменяемся контактами.</p>
-      <a href="#contact" class="btn btn-primary" style="display:inline-flex">Написать мне</a>
+      <p style="font-size:0.95rem;margin-bottom:0.8rem" data-i18n="blog_cta">Мне интересны люди, у которых уже есть аудитория в этой теме — врачи, нутрициологи, эксперты по ЗОЖ. Если вы такой человек или знаете таких — давайте обменяемся контактами.</p>
+      <a href="#contact" class="btn btn-primary" style="display:inline-flex" data-i18n="blog_cta_btn">Написать мне</a>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="section-label reveal" style="color: var(--gold);">Контакты</div>
-  <h2 class="section-title reveal">Свяжитесь со мной</h2>
+  <div class="section-label reveal" style="color: var(--gold);" data-i18n="contact_label">Контакты</div>
+  <h2 class="section-title reveal" data-i18n="contact_title">Свяжитесь со мной</h2>
   <div class="section-divider reveal"></div>
-  <p class="section-desc reveal">Готова к сотрудничеству — международные проекты, образовательные программы, а также партнёрства по блогу о здоровьесбережении</p>
+  <p class="section-desc reveal" data-i18n="contact_desc">Готова к сотрудничеству — международные проекты, образовательные программы, а также партнёрства по блогу о здоровьесбережении</p>
   <div class="contact-wrapper">
     <div class="contact-card reveal">
       <img src="Новская.png" alt="Новская Надежда" class="contact-photo">
-      <div class="contact-name">Новская Надежда Витальевна</div>
-      <div class="contact-role">Международный проектный продюсер, директор по развитию в сфере здравоохранения АЛРИИ, индивидуальный предприниматель</div>
+      <div class="contact-name" data-i18n="contact_name">Новская Надежда Витальевна</div>
+      <div class="contact-role" data-i18n="contact_role">Международный проектный продюсер, директор по развитию в сфере здравоохранения АЛРИИ, индивидуальный предприниматель</div>
       <div class="contact-details">
         <a href="tel:+79152618202">+7 (915) 261-82-02</a>
         <a href="mailto:n.filatova@orukovodstve.ru">n.filatova@orukovodstve.ru</a>
         <a href="https://t.me/msHope_Nadezhda" target="_blank" style="color:var(--gold)">Telegram: @msHope_Nadezhda</a>
-        <div class="hint">Работаю с госсектором (GR) и B2B</div>
+        <div class="hint" data-i18n="contact_hint">Работаю с госсектором (GR) и B2B</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 <span class="gold">Новская Надежда Витальевна</span></p>
-  <p style="margin-top:0.5rem;color:rgba(255,255,255,0.35);font-size:0.78rem;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto">Международный проектный продюсер в здравоохранении. Индивидуальный предприниматель. Директор по развитию в сфере здравоохранения АЛРИИ</p>
+  <p>&copy; 2026 <span class="gold" data-i18n="footer_name">Новская Надежда Витальевна</span></p>
+  <p style="margin-top:0.5rem;color:rgba(255,255,255,0.35);font-size:0.78rem;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto" data-i18n="footer_role">Международный проектный продюсер в здравоохранении. Индивидуальный предприниматель. Директор по развитию в сфере здравоохранения АЛРИИ</p>
   <p style="margin-top:0.3rem;color:rgba(255,255,255,0.25);font-size:0.75rem">27111985@gmail.com</p>
 </footer>
 
 <script>
-window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 800); });
+const lang = {
+  en: {
+    hero_badge: 'Sole Proprietor', hero_name: 'Novskaya', hero_surname: 'Nadezhda',
+    hero_sub: 'International Healthcare Project Producer',
+    hero_desc: 'I work at the intersection of medicine and international business — creating educational programs and organizing overseas trips for chief physicians and health ministers. Market: Russian government sector.',
+    hero_cta1: 'Contact me', hero_cta2: 'My experience', hero_scroll: 'Scroll',
+    nav_about: 'About', nav_exp: 'Experience', nav_process: 'Process', nav_speaking: 'Speaking',
+    nav_blog: 'Blog', nav_contact: 'Contacts',
+    about_label: 'About', about_title: 'At the Intersection of Medicine & International Business',
+    about_desc: '85 events organized in 10 years, attended by over 20,000 people',
+    about_p1: 'I am an international healthcare project producer. I work at the intersection of medicine and international business — creating educational programs and organizing overseas trips for chief physicians and health ministers. Market: Russian government sector.',
+    about_p2_part1: 'I work in partnership with the', about_p2_strong: 'Russia-China Chamber', about_p2_part2: 'and regional governors\' offices in Russia. I work with the government sector (GR) and B2B.',
+    about_h1: 'Business trips for chief physicians and health ministers',
+    about_h2: 'Educational programs with expert faculty',
+    about_h3: 'Partnerships with government bodies and international chambers',
+    about_h4: 'Full cycle: from idea to implementation',
+    stat1: 'Russian events', stat2: 'International', stat3: 'Online projects', stat4: 'Participants',
+    geo_label: 'Project geography',
+    geo1: 'China', geo2: 'Israel', geo3: 'Georgia', geo4: 'Czech Republic', geo5: 'Kazakhstan',
+    geo6: 'Latvia', geo7: 'Spain', geo8: 'Cyprus', geo9: 'Turkey', geo10: 'Egypt',
+    cred_label: 'Expertise', cred_title: 'My Experience & Achievements',
+    cred_desc: 'Over 10 years implementing healthcare projects at the international level',
+    cred1_title: 'International Business Trips',
+    cred1_text: 'I organize professional internships and business missions for healthcare executives to Asian countries and worldwide. Full cycle: concept, partnership, program, logistics, support.',
+    cred1_tag: 'Korea · China · Asia',
+    cred2_title: 'Educational Programs',
+    cred2_text: 'I build educational programs from scratch with expert faculty. I develop content, recruit lecturers, and organize the learning process for government officials and healthcare professionals.',
+    cred2_tag: 'Expert Faculty',
+    cred3_title: 'Speaking at Forums',
+    cred3_text: 'Spoke at the BRICS International Municipal Forum (St. Petersburg, 2025) on organizing business conferences in healthcare. Also spoke at the State Duma of Russia and at an international summit in India on an IVF project.',
+    cred3_tag: 'BRICS · State Duma · India',
+    cred4_title: 'Government Partnerships',
+    cred4_text: 'I work in partnership with the Russia-China Chamber and regional governors\' offices. I build effective cooperation between Russian and foreign government bodies.',
+    cred4_tag: 'GR · Government Sector',
+    proc_label: 'How I Work', proc_title: 'My Approach to Project Implementation',
+    proc_desc: 'Each project follows a clear cycle from idea to successful delivery',
+    step1_title: 'Project Idea', step1_text: 'I conceive the concept and identify a promising and useful niche',
+    step2_title: 'Foreign Partner', step2_text: 'I find a reliable partner in the target country — a clinic, university, or association',
+    step3_title: 'Russian Partner', step3_text: 'I engage a Russian partner — a ministry, chamber, or specialized organization',
+    step4_title: 'Product Creation', step4_text: 'I develop the TOR, gather proposals, build the program, calculate the economics',
+    step5_title: 'Government Sales', step5_text: 'I offer the finished product to the Russian market, working with governors\' offices and health ministries',
+    step6_title: 'Implementation', step6_text: 'I run the event, accompany participants, summarize results, and close the project',
+    speak_label: 'Speaking', speak_title: 'Where I Have Spoken',
+    speak_desc: 'Presented projects in reproductive health and international cooperation at high-level venues',
+    speak1_title: 'BRICS International Municipal Forum',
+    speak1_loc: 'St. Petersburg, October 2025',
+    speak1_text: 'Presentation on "Organizing International Business Conferences in Healthcare" at the round table "International Tourism: Supply and Demand." Organized by the Russia-China Chamber.',
+    speak2_title: 'State Duma of Russia',
+    speak2_loc: 'Moscow, Russia',
+    speak2_text: 'Presentation of initiatives and results of educational programs using AI in healthcare.',
+    speak3_title: 'Global Startup Summit 2025 — India',
+    speak3_loc: 'India',
+    speak3_text: 'Presentation of an IVF project at the international summit, showcasing Russian reproductive medicine practices.',
+    blog_label: 'Current Focus', blog_title: 'Starting a Health Preservation Blog',
+    blog_tag: 'Health Preservation',
+    blog_lead: 'Health preservation is not about treating diseases. It\'s about preventing them.',
+    blog_lead2: 'Treatment begins when something has already broken. Health preservation is a system of actions that prevents breakdown.',
+    blog_p1_title: 'Regular Diagnostics', blog_p1_text: 'Know your numbers before symptoms appear',
+    blog_p2_title: 'Lifestyle as a Tool', blog_p2_text: 'Nutrition, sleep, movement — not advice, but manageable parameters',
+    blog_p3_title: 'Healthy Mind', blog_p3_text: 'Stress, burnout, and mental state are part of the system, not a separate topic',
+    blog_p4_title: 'Medical Literacy', blog_p4_text: 'Understand lab results, read recommendations, don\'t panic at diagnoses',
+    blog_cta: 'I\'m interested in people who already have an audience in this space — doctors, nutritionists, wellness experts. If you are that person or know someone, let\'s connect.',
+    blog_cta_btn: 'Write to me',
+    contact_label: 'Contacts', contact_title: 'Get in Touch',
+    contact_desc: 'Open to collaboration — international projects, educational programs, and blog partnerships on health preservation',
+    contact_name: 'Novskaya Nadezhda Vitalievna',
+    contact_role: 'International Healthcare Project Producer, Healthcare Development Director at ALRII, Sole Proprietor',
+    contact_hint: 'Work with government sector (GR) and B2B',
+    footer_name: 'Novskaya Nadezhda Vitalievna',
+    footer_role: 'International Healthcare Project Producer. Sole Proprietor. Healthcare Development Director at ALRII'
+  }
+};
 
+function setLang(l) {
+  const t = lang[l];
+  if (!t) return;
+  document.getElementById('htmlTag').setAttribute('lang', l === 'en' ? 'en' : 'ru');
+  document.getElementById('langToggle').textContent = l === 'en' ? 'RU' : 'EN';
+  document.getElementById('langToggle').dataset.lang = l;
+  document.title = l === 'en' ? 'Novskaya Nadezhda | International Healthcare Project Producer' : 'Новская Надежда | Международный проектный продюсер в здравоохранении';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t[key]; }
+      else { el.innerHTML = t[key]; }
+    }
+  });
+  localStorage.setItem('lang', l);
+}
+
+const savedLang = localStorage.getItem('lang') || 'ru';
+document.getElementById('langToggle').addEventListener('click', () => {
+  const cur = document.getElementById('langToggle').dataset.lang;
+  setLang(cur === 'ru' ? 'en' : 'ru');
+});
+setLang(savedLang);
+
+window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 800); });
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80); });
-
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
 navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }); });
-
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 revealElements.forEach(el => revealObserver.observe(el));
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 });
 </script>
 </body>
